@@ -1,0 +1,6 @@
+C:\Users\szsas\source\repos\1075Manager\1075Library\bin\Debug\1075Library.dll
+C:\Users\szsas\source\repos\1075Manager\1075Library\bin\Debug\1075Library.pdb
+C:\Users\szsas\source\repos\1075Manager\1075Library\obj\Debug\1075Library.csproj.AssemblyReference.cache
+C:\Users\szsas\source\repos\1075Manager\1075Library\obj\Debug\1075Library.csproj.CoreCompileInputs.cache
+C:\Users\szsas\source\repos\1075Manager\1075Library\obj\Debug\1075Library.dll
+C:\Users\szsas\source\repos\1075Manager\1075Library\obj\Debug\1075Library.pdb
