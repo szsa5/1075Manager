@@ -1,2 +1,2 @@
 # 1075Manager
-Prototype of a managment application for a winery.
+Prototype of a management application for a winery.
