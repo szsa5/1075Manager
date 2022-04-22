@@ -1,13 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 
 namespace _1075Library
 {
@@ -17,16 +14,15 @@ namespace _1075Library
 
         public static bool CheckUsernameExists(string username)
         {
-            
-            using (MySqlConnection conn = new MySqlConnection(connString))
+            using (SqlConnection sqlCon = new SqlConnection(connString))
             {
                 DataTable dt = new DataTable();
 
-                conn.Open();
-                MySqlCommand sqlCmd = new MySqlCommand("GetAllUsers", conn);
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("dbo.GetAllUsers", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
 
-                MySqlDataAdapter da = new MySqlDataAdapter(sqlCmd);
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
                 da.Fill(dt);
 
                 DataRow resultRow = dt.AsEnumerable().FirstOrDefault(x => (x["username"].ToString().Trim()) == username);
@@ -40,18 +36,17 @@ namespace _1075Library
                 }
             }
         }
-
         public static bool CheckValidLogin(string username, string password)
         {
-            using (MySqlConnection conn = new MySqlConnection(connString))
+            using (SqlConnection sqlCon = new SqlConnection(connString))
             {
                 DataTable dt = new DataTable();
 
-                conn.Open();
-                MySqlCommand sqlCmd = new MySqlCommand("GetAllUsers", conn);
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("dbo.GetAllUsers", sqlCon);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
 
-                MySqlDataAdapter da = new MySqlDataAdapter(sqlCmd);
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
                 da.Fill(dt);
 
                 foreach (DataRow row in dt.Rows)
@@ -67,19 +62,14 @@ namespace _1075Library
         }
         public static void Register(string username, string password)
         {
-            using (MySqlConnection conn = new MySqlConnection(connString))
+            using (SqlConnection sqlCon = new SqlConnection(connString))
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("RegisterUser", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@p_username", username);
-                cmd.Parameters["@p_username"].Direction = ParameterDirection.Input;
-
-                cmd.Parameters.AddWithValue("@p_password", password);
-                cmd.Parameters["@p_password"].Direction = ParameterDirection.Input;
-
-                cmd.ExecuteNonQuery();
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand("dbo.User_Add", sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@username", username);
+                sqlCmd.Parameters.AddWithValue("@password", password);
+                sqlCmd.ExecuteNonQuery(); 
             }
         }
     }
