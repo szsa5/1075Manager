@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _1075Library;
 using _1075Library.Models;
 
 namespace _1075UI
@@ -17,31 +18,31 @@ namespace _1075UI
         public WinesForm()
         {
             InitializeComponent();
-            List<WineModel> wines = PopulateWines();
+            List<WineModel> wines = SqlTools.GetWines();
 
             LoadWines(wines);
         }
 
-        private List<WineModel> PopulateWines()
-        {
-            string wineDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\1075UI\\Resources\\wines";
-            var wineFiles = Directory.GetFiles(wineDirectory, "*.png", SearchOption.AllDirectories);
-            var wineImages = wineFiles.Select(Image.FromFile).ToArray();
-            var wineNames = wineFiles.Select(file => Path.GetFileName(file)).ToArray().Select(a => a.Replace(".png", "")).ToArray();
+        //private List<WineModel> PopulateWinesFromDirectory()
+        //{
+        //    string wineDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\1075UI\\Resources\\wines";
+        //    var wineFiles = Directory.GetFiles(wineDirectory, "*.png", SearchOption.AllDirectories);
+        //    var wineImages = wineFiles.Select(Image.FromFile).ToArray();
+        //    var wineNames = wineFiles.Select(file => Path.GetFileName(file)).ToArray().Select(a => a.Replace(".png", "")).ToArray();
 
-            List <WineModel> wines = new List<WineModel>();
+        //    List <WineModel> wines = new List<WineModel>();
 
-            for (int i = 0; i < wineNames.Length; i++)
-            {
-                WineModel wine = new WineModel();
-                wine.Name = wineNames[i];
-                wine.Image = wineImages[i];
+        //    for (int i = 0; i < wineNames.Length; i++)
+        //    {
+        //        WineModel wine = new WineModel();
+        //        wine.Name = wineNames[i];
+        //        wine.Image = wineImages[i];
 
-                wines.Add(wine);
-            }
+        //        wines.Add(wine);
+        //    }
 
-            return wines;
-        }
+        //    return wines;
+        //}
 
         private void LoadWines(List<WineModel> wines)
         {
@@ -59,7 +60,11 @@ namespace _1075UI
 
                 WineControl wineControl = new WineControl() { Location = new Point(X, Y) };
                 wineControl.SetWineName(wine.Name);
-                wineControl.SetWineImage(wine.Image);
+                if(wine.Image != null)
+                {
+                    wineControl.SetWineImage(wine.Image);
+                }
+                
                 this.Controls.Add(wineControl);
 
                 X += 178;
