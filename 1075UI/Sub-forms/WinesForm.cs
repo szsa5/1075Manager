@@ -24,8 +24,7 @@ namespace _1075UI
 
         private List<WineModel> PopulateWines()
         {
-            string wineDirectory = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName) + "\\media\\wines";
-
+            string wineDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\1075UI\\Resources\\wines";
             var wineFiles = Directory.GetFiles(wineDirectory, "*.png", SearchOption.AllDirectories);
             var wineImages = wineFiles.Select(Image.FromFile).ToArray();
             var wineNames = wineFiles.Select(file => Path.GetFileName(file)).ToArray().Select(a => a.Replace(".png", "")).ToArray();
@@ -68,5 +67,9 @@ namespace _1075UI
             }
         }
 
+        private void WinesForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
