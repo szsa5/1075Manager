@@ -150,5 +150,10 @@ namespace _1075Library
             }
             return wines;
         }
+
+        public static void CreateWine(string bor_nev, string bor_evjarat, string bor_szolo, string bor_ken, string bor_alkohol, string bor_cukor, string bor_extrakt, string bor_pdatum, string bor_ar, int bor_raktar, string picturepath)
+        {
+            //continue
+        }
     }
 }
