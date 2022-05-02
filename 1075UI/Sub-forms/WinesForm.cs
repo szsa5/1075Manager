@@ -10,16 +10,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1075Library;
 using _1075Library.Models;
+using _1075UI.Sub_forms.Sub_sub;
 
 namespace _1075UI
 {
     public partial class WinesForm : Form
     {
-        public WinesForm()
+        public WinesForm(Button addWineButton)
         {
             InitializeComponent();
-            List<WineModel> wines = SqlTools.GetWines();
 
+            addWineButton.Click += new EventHandler(addWineButton_Click);
+
+            List<WineModel> wines = SqlTools.GetWines();
             LoadWines(wines);
         }
 
@@ -59,7 +62,7 @@ namespace _1075UI
                 }
 
                 WineControl wineControl = new WineControl() { Location = new Point(X, Y) };
-                wineControl.SetWineName(wine.Name);
+                wineControl.SetWineName(wine.bor_nev);
                 if(wine.Image != null)
                 {
                     wineControl.SetWineImage(wine.Image);
@@ -70,6 +73,12 @@ namespace _1075UI
                 X += 178;
                 counter++;
             }
+        }
+
+        protected void addWineButton_Click(object sender, EventArgs e)
+        {
+            CreateWineForm createWineForm = new CreateWineForm();
+            createWineForm.Show();
         }
 
         private void WinesForm_Load(object sender, EventArgs e)

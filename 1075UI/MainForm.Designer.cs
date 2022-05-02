@@ -34,6 +34,7 @@ namespace _1075UI
             this.closeButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.formLoaderPanel = new System.Windows.Forms.Panel();
+            this.addWineButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.navPanel = new System.Windows.Forms.Panel();
             this.settingsButton = new System.Windows.Forms.Button();
@@ -58,10 +59,9 @@ namespace _1075UI
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.closeButton.ForeColor = System.Drawing.Color.BurlyWood;
-            this.closeButton.Location = new System.Drawing.Point(1366, 0);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.closeButton.Location = new System.Drawing.Point(911, 0);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(60, 62);
+            this.closeButton.Size = new System.Drawing.Size(40, 40);
             this.closeButton.TabIndex = 4;
             this.closeButton.Text = "X";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -72,21 +72,34 @@ namespace _1075UI
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 25.25F);
             this.titleLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.titleLabel.Location = new System.Drawing.Point(322, 14);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLabel.Location = new System.Drawing.Point(215, 9);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(304, 62);
+            this.titleLabel.Size = new System.Drawing.Size(200, 40);
             this.titleLabel.TabIndex = 5;
             this.titleLabel.Text = "Dashboard";
             // 
             // formLoaderPanel
             // 
             this.formLoaderPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.formLoaderPanel.Location = new System.Drawing.Point(279, 110);
-            this.formLoaderPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.formLoaderPanel.Location = new System.Drawing.Point(186, 71);
             this.formLoaderPanel.Name = "formLoaderPanel";
-            this.formLoaderPanel.Size = new System.Drawing.Size(1147, 778);
+            this.formLoaderPanel.Size = new System.Drawing.Size(765, 506);
             this.formLoaderPanel.TabIndex = 6;
+            // 
+            // addWineButton
+            // 
+            this.addWineButton.BackColor = System.Drawing.Color.BurlyWood;
+            this.addWineButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addWineButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addWineButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addWineButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.addWineButton.Location = new System.Drawing.Point(781, 12);
+            this.addWineButton.Name = "addWineButton";
+            this.addWineButton.Size = new System.Drawing.Size(100, 37);
+            this.addWineButton.TabIndex = 7;
+            this.addWineButton.UseVisualStyleBackColor = false;
+            this.addWineButton.Visible = false;
+            this.addWineButton.Click += new System.EventHandler(this.addWineButton_Click);
             // 
             // panel1
             // 
@@ -101,19 +114,17 @@ namespace _1075UI
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 888);
+            this.panel1.Size = new System.Drawing.Size(186, 577);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.Color.BurlyWood;
-            this.navPanel.Location = new System.Drawing.Point(0, 269);
-            this.navPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.navPanel.Location = new System.Drawing.Point(0, 175);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(8, 154);
+            this.navPanel.Size = new System.Drawing.Size(5, 100);
             this.navPanel.TabIndex = 2;
             // 
             // settingsButton
@@ -125,10 +136,9 @@ namespace _1075UI
             this.settingsButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.settingsButton.ForeColor = System.Drawing.Color.BurlyWood;
             this.settingsButton.Image = global::_1075UI.Properties.Resources.settings;
-            this.settingsButton.Location = new System.Drawing.Point(0, 823);
-            this.settingsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.settingsButton.Location = new System.Drawing.Point(0, 535);
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(279, 65);
+            this.settingsButton.Size = new System.Drawing.Size(186, 42);
             this.settingsButton.TabIndex = 1;
             this.settingsButton.Text = "Settings";
             this.settingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -145,10 +155,9 @@ namespace _1075UI
             this.shipmentsButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.shipmentsButton.ForeColor = System.Drawing.Color.BurlyWood;
             this.shipmentsButton.Image = ((System.Drawing.Image)(resources.GetObject("shipmentsButton.Image")));
-            this.shipmentsButton.Location = new System.Drawing.Point(0, 417);
-            this.shipmentsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.shipmentsButton.Location = new System.Drawing.Point(0, 270);
             this.shipmentsButton.Name = "shipmentsButton";
-            this.shipmentsButton.Size = new System.Drawing.Size(279, 65);
+            this.shipmentsButton.Size = new System.Drawing.Size(186, 42);
             this.shipmentsButton.TabIndex = 1;
             this.shipmentsButton.Text = "Shipments";
             this.shipmentsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -165,10 +174,9 @@ namespace _1075UI
             this.inventoryButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.inventoryButton.ForeColor = System.Drawing.Color.BurlyWood;
             this.inventoryButton.Image = global::_1075UI.Properties.Resources.inventory;
-            this.inventoryButton.Location = new System.Drawing.Point(0, 352);
-            this.inventoryButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inventoryButton.Location = new System.Drawing.Point(0, 228);
             this.inventoryButton.Name = "inventoryButton";
-            this.inventoryButton.Size = new System.Drawing.Size(279, 65);
+            this.inventoryButton.Size = new System.Drawing.Size(186, 42);
             this.inventoryButton.TabIndex = 1;
             this.inventoryButton.Text = "Inventory";
             this.inventoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -185,10 +193,9 @@ namespace _1075UI
             this.winesButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.winesButton.ForeColor = System.Drawing.Color.BurlyWood;
             this.winesButton.Image = ((System.Drawing.Image)(resources.GetObject("winesButton.Image")));
-            this.winesButton.Location = new System.Drawing.Point(0, 287);
-            this.winesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.winesButton.Location = new System.Drawing.Point(0, 186);
             this.winesButton.Name = "winesButton";
-            this.winesButton.Size = new System.Drawing.Size(279, 65);
+            this.winesButton.Size = new System.Drawing.Size(186, 42);
             this.winesButton.TabIndex = 1;
             this.winesButton.Text = "Wines";
             this.winesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -205,10 +212,9 @@ namespace _1075UI
             this.dashboardButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dashboardButton.ForeColor = System.Drawing.Color.BurlyWood;
             this.dashboardButton.Image = global::_1075UI.Properties.Resources.home;
-            this.dashboardButton.Location = new System.Drawing.Point(0, 222);
-            this.dashboardButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dashboardButton.Location = new System.Drawing.Point(0, 144);
             this.dashboardButton.Name = "dashboardButton";
-            this.dashboardButton.Size = new System.Drawing.Size(279, 65);
+            this.dashboardButton.Size = new System.Drawing.Size(186, 42);
             this.dashboardButton.TabIndex = 1;
             this.dashboardButton.Text = "Dashboard";
             this.dashboardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -222,19 +228,17 @@ namespace _1075UI
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 222);
+            this.panel2.Size = new System.Drawing.Size(186, 144);
             this.panel2.TabIndex = 0;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // usernameLabel
             // 
             this.usernameLabel.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.usernameLabel.Location = new System.Drawing.Point(0, 142);
-            this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.usernameLabel.Location = new System.Drawing.Point(0, 92);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(279, 38);
+            this.usernameLabel.Size = new System.Drawing.Size(186, 25);
             this.usernameLabel.TabIndex = 1;
             this.usernameLabel.Text = "a";
             this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -243,30 +247,30 @@ namespace _1075UI
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::_1075UI.Properties.Resources.usermedium;
-            this.pictureBox1.Location = new System.Drawing.Point(78, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 123);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1426, 888);
+            this.ClientSize = new System.Drawing.Size(951, 577);
+            this.Controls.Add(this.addWineButton);
             this.Controls.Add(this.formLoaderPanel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DashboardForm_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -293,5 +297,6 @@ namespace _1075UI
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Panel formLoaderPanel;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button addWineButton;
     }
 }

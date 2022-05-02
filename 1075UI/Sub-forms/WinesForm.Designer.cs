@@ -33,12 +33,11 @@ namespace _1075UI
             // 
             // WinesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1100, 734);
+            this.ClientSize = new System.Drawing.Size(733, 477);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "WinesForm";
             this.Text = "InnerForm10751";
             this.Load += new System.EventHandler(this.WinesForm_Load);

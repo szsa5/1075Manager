@@ -36,18 +36,18 @@ namespace _1075UI
             this.loginButton = new System.Windows.Forms.Button();
             this.passwordPanel = new System.Windows.Forms.Panel();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.passwordPictureBox = new System.Windows.Forms.PictureBox();
             this.usernamePanel = new System.Windows.Forms.Panel();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.userPictureBox = new System.Windows.Forms.PictureBox();
             this.loginLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
-            this.passwordPictureBox = new System.Windows.Forms.PictureBox();
-            this.userPictureBox = new System.Windows.Forms.PictureBox();
             this.woodPanel = new System.Windows.Forms.Panel();
             this.strekovLogo = new System.Windows.Forms.PictureBox();
             this.brightPanel.SuspendLayout();
             this.passwordPanel.SuspendLayout();
-            this.usernamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).BeginInit();
+            this.usernamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             this.woodPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.strekovLogo)).BeginInit();
@@ -139,6 +139,15 @@ namespace _1075UI
             this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.Click += new System.EventHandler(this.passwordTextBox_Click);
             // 
+            // passwordPictureBox
+            // 
+            this.passwordPictureBox.Image = global::_1075UI.Properties.Resources.pw;
+            this.passwordPictureBox.Location = new System.Drawing.Point(15, 11);
+            this.passwordPictureBox.Name = "passwordPictureBox";
+            this.passwordPictureBox.Size = new System.Drawing.Size(24, 24);
+            this.passwordPictureBox.TabIndex = 2;
+            this.passwordPictureBox.TabStop = false;
+            // 
             // usernamePanel
             // 
             this.usernamePanel.BackColor = System.Drawing.Color.White;
@@ -159,6 +168,15 @@ namespace _1075UI
             this.usernameTextBox.Size = new System.Drawing.Size(392, 24);
             this.usernameTextBox.TabIndex = 3;
             this.usernameTextBox.Click += new System.EventHandler(this.usernameTextBox_Click);
+            // 
+            // userPictureBox
+            // 
+            this.userPictureBox.Image = global::_1075UI.Properties.Resources.user1;
+            this.userPictureBox.Location = new System.Drawing.Point(15, 11);
+            this.userPictureBox.Name = "userPictureBox";
+            this.userPictureBox.Size = new System.Drawing.Size(24, 24);
+            this.userPictureBox.TabIndex = 1;
+            this.userPictureBox.TabStop = false;
             // 
             // loginLabel
             // 
@@ -185,24 +203,6 @@ namespace _1075UI
             this.closeButton.Text = "X";
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // passwordPictureBox
-            // 
-            this.passwordPictureBox.Image = global::_1075UI.Properties.Resources.pw;
-            this.passwordPictureBox.Location = new System.Drawing.Point(15, 11);
-            this.passwordPictureBox.Name = "passwordPictureBox";
-            this.passwordPictureBox.Size = new System.Drawing.Size(24, 24);
-            this.passwordPictureBox.TabIndex = 2;
-            this.passwordPictureBox.TabStop = false;
-            // 
-            // userPictureBox
-            // 
-            this.userPictureBox.Image = global::_1075UI.Properties.Resources.user1;
-            this.userPictureBox.Location = new System.Drawing.Point(15, 11);
-            this.userPictureBox.Name = "userPictureBox";
-            this.userPictureBox.Size = new System.Drawing.Size(24, 24);
-            this.userPictureBox.TabIndex = 1;
-            this.userPictureBox.TabStop = false;
             // 
             // woodPanel
             // 
@@ -241,9 +241,9 @@ namespace _1075UI
             this.brightPanel.PerformLayout();
             this.passwordPanel.ResumeLayout(false);
             this.passwordPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).EndInit();
             this.usernamePanel.ResumeLayout(false);
             this.usernamePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             this.woodPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.strekovLogo)).EndInit();

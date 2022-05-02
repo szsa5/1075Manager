@@ -77,6 +77,12 @@
     <Compile Include="Controls\WineControl.Designer.cs">
       <DependentUpon>WineControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sub-forms\Sub-sub\CreateWineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sub-forms\Sub-sub\InnerForm10751.Designer.cs">
+      <DependentUpon>CreateWineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sub-forms\WinesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WineControl.resx">
       <DependentUpon>WineControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub-forms\Sub-sub\CreateWineForm.resx">
+      <DependentUpon>CreateWineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sub-forms\WinesForm.resx">
       <DependentUpon>WinesForm.cs</DependentUpon>
@@ -224,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fred_test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholderwine.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

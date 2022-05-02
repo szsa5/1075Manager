@@ -36,7 +36,7 @@ namespace _1075UI
             // 
             // winePictureBox
             // 
-            this.winePictureBox.Image = global::_1075UI.Properties.Resources.fred_test;
+            this.winePictureBox.Image = global::_1075UI.Properties.Resources.placeholderwine;
             this.winePictureBox.Location = new System.Drawing.Point(54, 3);
             this.winePictureBox.Name = "winePictureBox";
             this.winePictureBox.Size = new System.Drawing.Size(71, 220);

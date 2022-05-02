@@ -97,9 +97,13 @@ namespace _1075UI
 
             titleLabel.Text = "Wines";
             this.formLoaderPanel.Controls.Clear();
-            WinesForm winesForm = new WinesForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            WinesForm winesForm = new WinesForm(addWineButton) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             winesForm.FormBorderStyle = FormBorderStyle.None;
             this.formLoaderPanel.Controls.Add(winesForm);
+
+            addWineButton.Text = "ADD WINE";
+            addWineButton.Visible = true;
+
             winesForm.Show();
         }
         private void inventoryButton_Click(object sender, EventArgs e)
@@ -185,6 +189,16 @@ namespace _1075UI
             pictureBox1.ContextMenu.MenuItems.Add("Log out", logout);
 
             pictureBox1.ContextMenu.Show(pictureBox1, new Point(e.X, e.Y));
+        }
+
+        private void addWineButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
