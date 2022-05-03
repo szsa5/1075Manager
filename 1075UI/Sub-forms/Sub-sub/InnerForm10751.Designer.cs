@@ -66,9 +66,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.createNewWineLabel.AutoSize = true;
             this.createNewWineLabel.Font = new System.Drawing.Font("Century Gothic", 24F);
             this.createNewWineLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.createNewWineLabel.Location = new System.Drawing.Point(15, 23);
+            this.createNewWineLabel.Location = new System.Drawing.Point(22, 35);
+            this.createNewWineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.createNewWineLabel.Name = "createNewWineLabel";
-            this.createNewWineLabel.Size = new System.Drawing.Size(321, 39);
+            this.createNewWineLabel.Size = new System.Drawing.Size(465, 58);
             this.createNewWineLabel.TabIndex = 6;
             this.createNewWineLabel.Text = "Create a new wine";
             // 
@@ -77,9 +78,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.nameTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.nameTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.nameTB.Location = new System.Drawing.Point(108, 78);
+            this.nameTB.Location = new System.Drawing.Point(162, 120);
+            this.nameTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nameTB.Name = "nameTB";
-            this.nameTB.Size = new System.Drawing.Size(220, 24);
+            this.nameTB.Size = new System.Drawing.Size(330, 35);
             this.nameTB.TabIndex = 7;
             this.nameTB.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             // 
@@ -88,9 +90,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.nameLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.nameLabel.Location = new System.Drawing.Point(18, 78);
+            this.nameLabel.Location = new System.Drawing.Point(27, 120);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(68, 21);
+            this.nameLabel.Size = new System.Drawing.Size(104, 30);
             this.nameLabel.TabIndex = 8;
             this.nameLabel.Text = "Name*:";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,9 +103,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.vintageLabel.AutoSize = true;
             this.vintageLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.vintageLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.vintageLabel.Location = new System.Drawing.Point(18, 108);
+            this.vintageLabel.Location = new System.Drawing.Point(27, 166);
+            this.vintageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vintageLabel.Name = "vintageLabel";
-            this.vintageLabel.Size = new System.Drawing.Size(83, 21);
+            this.vintageLabel.Size = new System.Drawing.Size(124, 30);
             this.vintageLabel.TabIndex = 9;
             this.vintageLabel.Text = "Vintage*:";
             this.vintageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,9 +116,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.vintageTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.vintageTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.vintageTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.vintageTB.Location = new System.Drawing.Point(108, 108);
+            this.vintageTB.Location = new System.Drawing.Point(162, 166);
+            this.vintageTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vintageTB.Name = "vintageTB";
-            this.vintageTB.Size = new System.Drawing.Size(220, 24);
+            this.vintageTB.Size = new System.Drawing.Size(330, 35);
             this.vintageTB.TabIndex = 10;
             // 
             // grapesLabel
@@ -122,9 +127,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.grapesLabel.AutoSize = true;
             this.grapesLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.grapesLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.grapesLabel.Location = new System.Drawing.Point(18, 138);
+            this.grapesLabel.Location = new System.Drawing.Point(27, 212);
+            this.grapesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.grapesLabel.Name = "grapesLabel";
-            this.grapesLabel.Size = new System.Drawing.Size(71, 21);
+            this.grapesLabel.Size = new System.Drawing.Size(106, 30);
             this.grapesLabel.TabIndex = 11;
             this.grapesLabel.Text = "Grapes:";
             // 
@@ -133,9 +139,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.sulfitesLabel.AutoSize = true;
             this.sulfitesLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.sulfitesLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.sulfitesLabel.Location = new System.Drawing.Point(18, 168);
+            this.sulfitesLabel.Location = new System.Drawing.Point(27, 258);
+            this.sulfitesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sulfitesLabel.Name = "sulfitesLabel";
-            this.sulfitesLabel.Size = new System.Drawing.Size(66, 21);
+            this.sulfitesLabel.Size = new System.Drawing.Size(101, 30);
             this.sulfitesLabel.TabIndex = 12;
             this.sulfitesLabel.Text = "Sulfites:";
             // 
@@ -144,9 +151,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.alcoholLabel.AutoSize = true;
             this.alcoholLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.alcoholLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.alcoholLabel.Location = new System.Drawing.Point(18, 198);
+            this.alcoholLabel.Location = new System.Drawing.Point(27, 305);
+            this.alcoholLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alcoholLabel.Name = "alcoholLabel";
-            this.alcoholLabel.Size = new System.Drawing.Size(73, 21);
+            this.alcoholLabel.Size = new System.Drawing.Size(112, 30);
             this.alcoholLabel.TabIndex = 13;
             this.alcoholLabel.Text = "Alcohol:";
             // 
@@ -155,9 +163,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.sugarLabel.AutoSize = true;
             this.sugarLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.sugarLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.sugarLabel.Location = new System.Drawing.Point(18, 228);
+            this.sugarLabel.Location = new System.Drawing.Point(27, 351);
+            this.sugarLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sugarLabel.Name = "sugarLabel";
-            this.sugarLabel.Size = new System.Drawing.Size(59, 21);
+            this.sugarLabel.Size = new System.Drawing.Size(86, 30);
             this.sugarLabel.TabIndex = 14;
             this.sugarLabel.Text = "Sugar:";
             // 
@@ -166,9 +175,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.instockLabel.AutoSize = true;
             this.instockLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.instockLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.instockLabel.Location = new System.Drawing.Point(18, 348);
+            this.instockLabel.Location = new System.Drawing.Point(27, 535);
+            this.instockLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.instockLabel.Name = "instockLabel";
-            this.instockLabel.Size = new System.Drawing.Size(80, 21);
+            this.instockLabel.Size = new System.Drawing.Size(120, 30);
             this.instockLabel.TabIndex = 15;
             this.instockLabel.Text = "In stock*:";
             // 
@@ -177,9 +187,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.priceLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.priceLabel.Location = new System.Drawing.Point(18, 318);
+            this.priceLabel.Location = new System.Drawing.Point(27, 489);
+            this.priceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(57, 21);
+            this.priceLabel.Size = new System.Drawing.Size(89, 30);
             this.priceLabel.TabIndex = 16;
             this.priceLabel.Text = "Price*:";
             // 
@@ -188,9 +199,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.extractLabel.AutoSize = true;
             this.extractLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.extractLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.extractLabel.Location = new System.Drawing.Point(18, 258);
+            this.extractLabel.Location = new System.Drawing.Point(27, 397);
+            this.extractLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.extractLabel.Name = "extractLabel";
-            this.extractLabel.Size = new System.Drawing.Size(71, 21);
+            this.extractLabel.Size = new System.Drawing.Size(100, 30);
             this.extractLabel.TabIndex = 17;
             this.extractLabel.Text = "Extract:";
             // 
@@ -199,9 +211,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.bdateLabel.AutoSize = true;
             this.bdateLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.bdateLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.bdateLabel.Location = new System.Drawing.Point(18, 288);
+            this.bdateLabel.Location = new System.Drawing.Point(27, 443);
+            this.bdateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bdateLabel.Name = "bdateLabel";
-            this.bdateLabel.Size = new System.Drawing.Size(70, 21);
+            this.bdateLabel.Size = new System.Drawing.Size(104, 30);
             this.bdateLabel.TabIndex = 18;
             this.bdateLabel.Text = "B. date:";
             // 
@@ -210,9 +223,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.instockTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.instockTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.instockTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.instockTB.Location = new System.Drawing.Point(108, 348);
+            this.instockTB.Location = new System.Drawing.Point(162, 535);
+            this.instockTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.instockTB.Name = "instockTB";
-            this.instockTB.Size = new System.Drawing.Size(220, 24);
+            this.instockTB.Size = new System.Drawing.Size(330, 35);
             this.instockTB.TabIndex = 19;
             // 
             // priceTB
@@ -220,9 +234,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.priceTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.priceTB.Location = new System.Drawing.Point(108, 318);
+            this.priceTB.Location = new System.Drawing.Point(162, 489);
+            this.priceTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.priceTB.Name = "priceTB";
-            this.priceTB.Size = new System.Drawing.Size(220, 24);
+            this.priceTB.Size = new System.Drawing.Size(330, 35);
             this.priceTB.TabIndex = 20;
             // 
             // extractTB
@@ -230,9 +245,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.extractTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.extractTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.extractTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.extractTB.Location = new System.Drawing.Point(108, 258);
+            this.extractTB.Location = new System.Drawing.Point(162, 397);
+            this.extractTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.extractTB.Name = "extractTB";
-            this.extractTB.Size = new System.Drawing.Size(220, 24);
+            this.extractTB.Size = new System.Drawing.Size(330, 35);
             this.extractTB.TabIndex = 21;
             // 
             // sulfitesTB
@@ -240,9 +256,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.sulfitesTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.sulfitesTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sulfitesTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.sulfitesTB.Location = new System.Drawing.Point(108, 168);
+            this.sulfitesTB.Location = new System.Drawing.Point(162, 258);
+            this.sulfitesTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sulfitesTB.Name = "sulfitesTB";
-            this.sulfitesTB.Size = new System.Drawing.Size(220, 24);
+            this.sulfitesTB.Size = new System.Drawing.Size(330, 35);
             this.sulfitesTB.TabIndex = 22;
             // 
             // alcoholTB
@@ -250,9 +267,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.alcoholTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.alcoholTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.alcoholTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.alcoholTB.Location = new System.Drawing.Point(108, 198);
+            this.alcoholTB.Location = new System.Drawing.Point(162, 305);
+            this.alcoholTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.alcoholTB.Name = "alcoholTB";
-            this.alcoholTB.Size = new System.Drawing.Size(220, 24);
+            this.alcoholTB.Size = new System.Drawing.Size(330, 35);
             this.alcoholTB.TabIndex = 23;
             // 
             // bdateTB
@@ -260,9 +278,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.bdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bdateTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bdateTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.bdateTB.Location = new System.Drawing.Point(108, 288);
+            this.bdateTB.Location = new System.Drawing.Point(162, 443);
+            this.bdateTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bdateTB.Name = "bdateTB";
-            this.bdateTB.Size = new System.Drawing.Size(220, 24);
+            this.bdateTB.Size = new System.Drawing.Size(330, 35);
             this.bdateTB.TabIndex = 24;
             // 
             // sugarTB
@@ -270,9 +289,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.sugarTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.sugarTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sugarTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.sugarTB.Location = new System.Drawing.Point(108, 228);
+            this.sugarTB.Location = new System.Drawing.Point(162, 351);
+            this.sugarTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sugarTB.Name = "sugarTB";
-            this.sugarTB.Size = new System.Drawing.Size(220, 24);
+            this.sugarTB.Size = new System.Drawing.Size(330, 35);
             this.sugarTB.TabIndex = 25;
             // 
             // grapesTB
@@ -280,9 +300,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.grapesTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grapesTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.grapesTB.ForeColor = System.Drawing.Color.BurlyWood;
-            this.grapesTB.Location = new System.Drawing.Point(108, 138);
+            this.grapesTB.Location = new System.Drawing.Point(162, 212);
+            this.grapesTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grapesTB.Name = "grapesTB";
-            this.grapesTB.Size = new System.Drawing.Size(220, 24);
+            this.grapesTB.Size = new System.Drawing.Size(330, 35);
             this.grapesTB.TabIndex = 26;
             // 
             // selectPictureLabel
@@ -290,9 +311,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.selectPictureLabel.AutoSize = true;
             this.selectPictureLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.selectPictureLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.selectPictureLabel.Location = new System.Drawing.Point(355, 27);
+            this.selectPictureLabel.Location = new System.Drawing.Point(532, 42);
+            this.selectPictureLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.selectPictureLabel.Name = "selectPictureLabel";
-            this.selectPictureLabel.Size = new System.Drawing.Size(122, 21);
+            this.selectPictureLabel.Size = new System.Drawing.Size(185, 30);
             this.selectPictureLabel.TabIndex = 27;
             this.selectPictureLabel.Text = "Select picture:";
             // 
@@ -303,9 +325,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.createWineButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createWineButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.createWineButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.createWineButton.Location = new System.Drawing.Point(277, 390);
+            this.createWineButton.Location = new System.Drawing.Point(416, 600);
+            this.createWineButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.createWineButton.Name = "createWineButton";
-            this.createWineButton.Size = new System.Drawing.Size(100, 37);
+            this.createWineButton.Size = new System.Drawing.Size(150, 57);
             this.createWineButton.TabIndex = 28;
             this.createWineButton.Text = "CREATE";
             this.createWineButton.UseVisualStyleBackColor = false;
@@ -319,9 +342,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.browseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.browseButton.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.browseButton.ForeColor = System.Drawing.Color.White;
-            this.browseButton.Location = new System.Drawing.Point(483, 23);
+            this.browseButton.Location = new System.Drawing.Point(724, 35);
+            this.browseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(121, 25);
+            this.browseButton.Size = new System.Drawing.Size(182, 38);
             this.browseButton.TabIndex = 29;
             this.browseButton.Text = "BROWSE";
             this.browseButton.UseVisualStyleBackColor = false;
@@ -336,9 +360,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             // 
             this.selectedPictureLabel.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.selectedPictureLabel.ForeColor = System.Drawing.Color.BurlyWood;
-            this.selectedPictureLabel.Location = new System.Drawing.Point(403, 412);
+            this.selectedPictureLabel.Location = new System.Drawing.Point(604, 634);
+            this.selectedPictureLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.selectedPictureLabel.Name = "selectedPictureLabel";
-            this.selectedPictureLabel.Size = new System.Drawing.Size(192, 21);
+            this.selectedPictureLabel.Size = new System.Drawing.Size(288, 32);
             this.selectedPictureLabel.TabIndex = 30;
             this.selectedPictureLabel.Text = "<picture>";
             this.selectedPictureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -347,9 +372,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             // winePictureBox
             // 
             this.winePictureBox.Image = global::_1075UI.Properties.Resources.placeholderwine;
-            this.winePictureBox.Location = new System.Drawing.Point(433, 78);
+            this.winePictureBox.Location = new System.Drawing.Point(650, 120);
+            this.winePictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.winePictureBox.Name = "winePictureBox";
-            this.winePictureBox.Size = new System.Drawing.Size(138, 329);
+            this.winePictureBox.Size = new System.Drawing.Size(207, 506);
             this.winePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.winePictureBox.TabIndex = 31;
             this.winePictureBox.TabStop = false;
@@ -359,9 +385,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.euroSymbol.AutoSize = true;
             this.euroSymbol.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.euroSymbol.ForeColor = System.Drawing.Color.BurlyWood;
-            this.euroSymbol.Location = new System.Drawing.Point(334, 318);
+            this.euroSymbol.Location = new System.Drawing.Point(501, 488);
+            this.euroSymbol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.euroSymbol.Name = "euroSymbol";
-            this.euroSymbol.Size = new System.Drawing.Size(19, 21);
+            this.euroSymbol.Size = new System.Drawing.Size(26, 30);
             this.euroSymbol.TabIndex = 32;
             this.euroSymbol.Text = "€";
             // 
@@ -370,18 +397,19 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label1.ForeColor = System.Drawing.Color.BurlyWood;
-            this.label1.Location = new System.Drawing.Point(356, 51);
+            this.label1.Location = new System.Drawing.Point(534, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 16);
+            this.label1.Size = new System.Drawing.Size(330, 21);
             this.label1.TabIndex = 33;
             this.label1.Text = "(Currently only within project boundaries)";
             // 
             // CreateWineForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(641, 442);
+            this.ClientSize = new System.Drawing.Size(962, 680);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.euroSymbol);
             this.Controls.Add(this.winePictureBox);
@@ -411,8 +439,10 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.Controls.Add(this.nameTB);
             this.Controls.Add(this.createNewWineLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CreateWineForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateWineForm_FormClosed);
             this.Load += new System.EventHandler(this.InnerForm10751_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CreateWineForm_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.winePictureBox)).EndInit();

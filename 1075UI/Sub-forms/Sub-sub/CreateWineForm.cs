@@ -49,7 +49,7 @@ namespace _1075UI.Sub_forms.Sub_sub
 
         }
 
-
+        
         private void selectPictureButton_Click(object sender, EventArgs e)
         {
             dialog.Filter = "Image files|*.png";
@@ -99,9 +99,8 @@ namespace _1075UI.Sub_forms.Sub_sub
                 "\n" + "Bottling date: " + bdateTB.Text +
                 "\n" + "Price: " + priceTB.Text  +
                 "\n" + "In stock: " + instockTB.Text +
-                "\n" + "Picture: " + instockTB.Text + dialog.SafeFileName +
-                "\n\n" + "Would you like to create this wine?"+
-                asd,//remove
+                "\n" + "Picture: " + dialog.SafeFileName +
+                "\n\n" + "Would you like to create this wine?",
 
                     
                 "Data validation", MessageBoxButtons.YesNo);
@@ -109,14 +108,23 @@ namespace _1075UI.Sub_forms.Sub_sub
                 switch (dr)
                 {
                     case DialogResult.Yes:
-                        //database+OOPlogic
+                        //database logic
                         string price = priceTB.Text;
                         price += "€";
 
+                        ///preparing prerequisites
                         int instock = Int32.Parse(instockTB.Text);
                         string picturepath = dialog.FileName.Split(new string[] { "1075Manager" }, StringSplitOptions.RemoveEmptyEntries)[1];
 
-                        SqlTools.CreateWine(nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text, alcoholTB.Text, sugarTB.Text, extractTB.Text, bdateTB.Text, price, instock, picturepath);
+                        //DB returns id
+                        int id = SqlTools.CreateWine(nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text, alcoholTB.Text, sugarTB.Text, extractTB.Text, bdateTB.Text, price, instock, picturepath);
+
+                        Console.WriteLine("ID:"+id);
+
+                        //call constructor with id from db
+                        WineModel newWine = new WineModel(id,nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text, alcoholTB.Text, sugarTB.Text, extractTB.Text, bdateTB.Text, price, instock, dialog.FileName);
+                        Console.WriteLine(newWine.bor_nev);
+                        MessageBox.Show("Wine added succesfully.");
                         ///
                         ResetForm();
                         break;
@@ -210,5 +218,9 @@ namespace _1075UI.Sub_forms.Sub_sub
             selectedPictureLabel.Visible = false;
         }
 
+        private void CreateWineForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

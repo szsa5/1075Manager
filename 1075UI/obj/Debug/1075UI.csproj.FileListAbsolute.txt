@@ -62,3 +62,4 @@ C:\Users\szsas\Source\Repos\1075Manager\1075UI\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\szsas\Source\Repos\1075Manager\1075UI\obj\Debug\1075UI.csproj.SuggestedBindingRedirects.cache
 C:\Users\szsas\Source\Repos\1075Manager\1075UI\obj\Debug\1075UI.exe.config
 C:\Users\szsas\Source\Repos\szsa5\1075Manager\1075UI\obj\Debug\_1075UI.Sub_forms.Sub_sub.CreateWineForm.resources
+C:\Users\szsas\source\repos\1075Manager\1075UI\obj\Debug\_1075UI.Sub_forms.Sub_sub.CreateWineForm.resources

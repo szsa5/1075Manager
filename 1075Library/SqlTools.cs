@@ -126,7 +126,7 @@ namespace _1075Library
                     //10. bor_ar
                     wine.bor_ar = row["bor_ar"].ToString();
                     //11. bor_raktar
-                    wine.bor_raktar = row["bor_raktar"].ToString();
+                    wine.bor_raktar = Convert.ToInt32(row["bor_raktar"]);
                     //12. bor_picture
                     if (row["picturepath"].ToString() != "")
                     {
@@ -151,8 +151,59 @@ namespace _1075Library
             return wines;
         }
 
-        public static void CreateWine(string bor_nev, string bor_evjarat, string bor_szolo, string bor_ken, string bor_alkohol, string bor_cukor, string bor_extrakt, string bor_pdatum, string bor_ar, int bor_raktar, string picturepath)
+        public static int CreateWine(string bor_nev, string bor_evjarat, string bor_szolo, string bor_ken, string bor_alkohol, string bor_cukor, 
+            string bor_extrakt, string bor_pdatum, string bor_ar, int bor_raktar, string in_picturepath)
         {
+            int id=0;
+
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("CreateWine", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@bor_nev", bor_nev);
+                cmd.Parameters["@bor_nev"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_evjarat", bor_evjarat);
+                cmd.Parameters["@bor_evjarat"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_szolo", bor_szolo);
+                cmd.Parameters["@bor_szolo"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_ken", bor_ken);
+                cmd.Parameters["@bor_ken"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_alkohol", bor_alkohol);
+                cmd.Parameters["@bor_alkohol"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_cukor", bor_cukor);
+                cmd.Parameters["@bor_cukor"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_extrakt", bor_extrakt);
+                cmd.Parameters["@bor_extrakt"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_pdatum", bor_pdatum);
+                cmd.Parameters["@bor_pdatum"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_ar", bor_ar);
+                cmd.Parameters["@bor_ar"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@bor_raktar", bor_raktar);
+                cmd.Parameters["@bor_raktar"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@in_picturepath", in_picturepath);
+                cmd.Parameters["@in_picturepath"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.Add(new MySqlParameter("?out_id", MySqlDbType.Int32));
+                cmd.Parameters["?out_id"].Direction = ParameterDirection.Output;
+
+                id = Convert.ToInt32(cmd.Parameters["?out_id"].Value);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            return id;
             //continue
         }
     }
