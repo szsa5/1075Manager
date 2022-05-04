@@ -77,13 +77,20 @@ namespace _1075UI
 
         protected void addWineButton_Click(object sender, EventArgs e)
         {
-            CreateWineForm createWineForm = new CreateWineForm();
+            CreateWineForm createWineForm = new CreateWineForm(this);
+            createWineForm.FormClosing += new FormClosingEventHandler(CreateWineFormClosing);
             createWineForm.Show();
         }
-
-        private void WinesForm_Load(object sender, EventArgs e)
+        private void CreateWineFormClosing(object sender, FormClosingEventArgs e)
         {
-
+            this.Controls.Clear();
+            this.InitializeComponent();
+            List<WineModel> wines = SqlTools.GetWines();
+            LoadWines(wines);
         }
-    }
+        private void WinesForm_Load(object sender, EventArgs e)
+            {
+
+            }
+        }
 }

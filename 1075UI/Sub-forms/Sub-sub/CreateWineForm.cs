@@ -10,7 +10,6 @@ namespace _1075UI.Sub_forms.Sub_sub
 {
     public partial class CreateWineForm : Form
     {
-        
 
         //FOR MOVING THE BORDERLESS WINDOW
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -21,10 +20,9 @@ namespace _1075UI.Sub_forms.Sub_sub
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        public CreateWineForm()
+        public CreateWineForm(WinesForm wineForm)
         {
             InitializeComponent();
-
             
         }
 
@@ -91,14 +89,14 @@ namespace _1075UI.Sub_forms.Sub_sub
                 ("A new wine will get created with the following properties: " +
                 "\n" +"Name: "+nameTB.Text+
                 "\n" + "Vintage: " + vintageTB.Text +
-                "\n" + "Grapes: " + grapesTB.Text +
-                "\n" + "Sulfites: " + sulfitesTB.Text +
-                "\n" + "Alcohol: " + alcoholTB.Text +
-                "\n" + "Sugar: " + sugarTB.Text +
-                "\n" + "Extract: " + extractTB.Text +
+                "\n" + "Grapes: " + grapesTB.Text + 
+                "\n" + "Sulfites: " + sulfitesTB.Text + "mg/l"+
+                "\n" + "Alcohol: " + alcoholTB.Text + "%" +
+                "\n" + "Sugar: " + sugarTB.Text + "g/l" +
+                "\n" + "Extract: " + extractTB.Text + "g/l" +
                 "\n" + "Bottling date: " + bdateTB.Text +
-                "\n" + "Price: " + priceTB.Text  +
-                "\n" + "In stock: " + instockTB.Text +
+                "\n" + "Price: " + priceTB.Text  + "€" +
+                "\n" + "In stock: " + instockTB.Text + " btls" +
                 "\n" + "Picture: " + dialog.SafeFileName +
                 "\n\n" + "Would you like to create this wine?",
 
@@ -109,20 +107,18 @@ namespace _1075UI.Sub_forms.Sub_sub
                 {
                     case DialogResult.Yes:
                         //database logic
-                        string price = priceTB.Text;
-                        price += "€";
 
                         ///preparing prerequisites
                         int instock = Int32.Parse(instockTB.Text);
                         string picturepath = dialog.FileName.Split(new string[] { "1075Manager" }, StringSplitOptions.RemoveEmptyEntries)[1];
 
                         //DB returns id
-                        int id = SqlTools.CreateWine(nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text, alcoholTB.Text, sugarTB.Text, extractTB.Text, bdateTB.Text, price, instock, picturepath);
+                        int id = SqlTools.CreateWine(nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text + "mg/l", alcoholTB.Text + "%", sugarTB.Text + "g/l", extractTB.Text + "g/l", bdateTB.Text, priceTB.Text + "€", instock, picturepath);
 
                         Console.WriteLine("ID:"+id);
 
                         //call constructor with id from db
-                        WineModel newWine = new WineModel(id,nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text, alcoholTB.Text, sugarTB.Text, extractTB.Text, bdateTB.Text, price, instock, dialog.FileName);
+                        WineModel newWine = new WineModel(id,nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text + "mg/l", alcoholTB.Text + "%", sugarTB.Text + "g/l", extractTB.Text + "g/l", bdateTB.Text, priceTB.Text + "€", instock, dialog.FileName);
                         Console.WriteLine(newWine.bor_nev);
                         MessageBox.Show("Wine added succesfully.");
                         ///
