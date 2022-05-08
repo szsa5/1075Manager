@@ -15,17 +15,6 @@ namespace _1075UI
     {
         private LoginForm _loginForm;
         string user_name;
-        //ROUND
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-           int nLeftRect,
-           int nTopRect,
-           int nRightRect,
-           int nBottomRect,
-           int nWidthEllipse,
-           int nHeightEllipse
-        );
 
         //FOR MOVING THE BORDERLESS WINDOW
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -42,7 +31,6 @@ namespace _1075UI
             _loginForm = loginForm;
             user_name = username;
             usernameLabel.Text = username;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             navPanel.Height = dashboardButton.Height;
             navPanel.Top = dashboardButton.Top;
             navPanel.Left = dashboardButton.Left;

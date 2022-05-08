@@ -143,7 +143,6 @@ namespace _1075Library
                         wine.Image = wineImage;
                     }
 
-                    Console.WriteLine(wine.bor_pdatum, wine.bor_ar, wine.bor_raktar);
                     //add to wine object
                     wines.Add(wine);
                 }
@@ -193,7 +192,9 @@ namespace _1075Library
                 cmd.Parameters["@bor_raktar"].Direction = ParameterDirection.Input;
 
                 cmd.Parameters.AddWithValue("@in_picturepath", in_picturepath);
+                cmd.Parameters["@in_picturepath"].IsNullable = true;
                 cmd.Parameters["@in_picturepath"].Direction = ParameterDirection.Input;
+                
 
                 cmd.Parameters.Add(new MySqlParameter("?out_id", MySqlDbType.Int32));
                 cmd.Parameters["?out_id"].Direction = ParameterDirection.Output;

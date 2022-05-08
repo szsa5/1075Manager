@@ -15,17 +15,7 @@ namespace _1075UI
 {
     public partial class LoginForm : Form
     {
-        //ROUND
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-           int nLeftRect,
-           int nTopRect,
-           int nRightRect,
-           int nBottomRect,
-           int nWidthEllipse,
-           int nHeightEllipse
-        );
+
         //FOR MOVING THE BORDERLESS WINDOW
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -39,7 +29,6 @@ namespace _1075UI
         public LoginForm()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         //FOR MOVING THE BORDERLESS WINDOW

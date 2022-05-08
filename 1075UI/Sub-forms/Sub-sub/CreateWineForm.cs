@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using _1075Library;
@@ -23,7 +24,6 @@ namespace _1075UI.Sub_forms.Sub_sub
         public CreateWineForm(WinesForm wineForm)
         {
             InitializeComponent();
-            
         }
 
         //FOR MOVING THE BORDERLESS WINDOW
@@ -69,8 +69,6 @@ namespace _1075UI.Sub_forms.Sub_sub
             };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(dialog.SafeFileName + " selected");
-
                 //show filename
                 selectedPictureLabel.Visible = true;
                 selectedPictureLabel.Text = dialog.SafeFileName;
@@ -84,7 +82,6 @@ namespace _1075UI.Sub_forms.Sub_sub
         {
             if(FormIsValid())
             {
-                string asd = dialog.FileName.Split(new string[] { "1075Manager" }, StringSplitOptions.RemoveEmptyEntries)[1];
                 DialogResult dr = MessageBox.Show
                 ("A new wine will get created with the following properties: " +
                 "\n" +"Name: "+nameTB.Text+
@@ -110,16 +107,28 @@ namespace _1075UI.Sub_forms.Sub_sub
 
                         ///preparing prerequisites
                         int instock = Int32.Parse(instockTB.Text);
-                        string picturepath = dialog.FileName.Split(new string[] { "1075Manager" }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        string picturepath = null;
 
+                        bool image_isselected = dialog.FileName != "dialog";
+                        //check if there is a file selected
+                        if (image_isselected)
+                        {
+                            picturepath = dialog.FileName.Split(new string[] { "1075Manager" }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        }
+                        
                         //DB returns id
                         int id = SqlTools.CreateWine(nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text + "mg/l", alcoholTB.Text + "%", sugarTB.Text + "g/l", extractTB.Text + "g/l", bdateTB.Text, priceTB.Text + "€", instock, picturepath);
 
-                        Console.WriteLine("ID:"+id);
-
                         //call constructor with id from db
-                        WineModel newWine = new WineModel(id,nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text + "mg/l", alcoholTB.Text + "%", sugarTB.Text + "g/l", extractTB.Text + "g/l", bdateTB.Text, priceTB.Text + "€", instock, dialog.FileName);
-                        Console.WriteLine(newWine.bor_nev);
+                        if (image_isselected)
+                        {
+                            WineModel newWine = new WineModel(id, nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text + "mg/l", alcoholTB.Text + "%", sugarTB.Text + "g/l", extractTB.Text + "g/l", bdateTB.Text, priceTB.Text + "€", instock, dialog.FileName);
+                        }
+                        else
+                        {
+                            WineModel newWine = new WineModel(id, nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text + "mg/l", alcoholTB.Text + "%", sugarTB.Text + "g/l", extractTB.Text + "g/l", bdateTB.Text, priceTB.Text + "€", instock);
+                        }
+                        
                         MessageBox.Show("Wine added succesfully.");
                         ///
                         ResetForm();
@@ -138,47 +147,12 @@ namespace _1075UI.Sub_forms.Sub_sub
             bool valid = true;
             int parser;
 
-            if ((nameTB.Text.Length < 0 && nameTB.Text.Length > 50))
-            {
-                valid = false;
-            }
-
-            if ((vintageTB.Text.Length < 0 && vintageTB.Text.Length > 50))
-            {
-                valid = false;
-            }
-
-            if ((grapesTB.Text.Length < 0 && grapesTB.Text.Length > 50))
-            {
-                valid = false;
-            }
-
-            if ((sulfitesTB.Text.Length < 0 && sulfitesTB.Text.Length > 50))
-            {
-                valid = false;
-            }
-
-            if ((alcoholTB.Text.Length < 0 && alcoholTB.Text.Length > 50))
-            {
-                valid = false;
-            }
-
-            if ((sugarTB.Text.Length < 0 && sugarTB.Text.Length > 50))
-            {
-                valid = false;
-            }
-
-            if ((extractTB.Text.Length < 0 && extractTB.Text.Length > 50))
-            {
-                valid = false;
-            }
-
-            if ((bdateTB.Text.Length < 0 && bdateTB.Text.Length > 50))
-            {
-                valid = false;
-            }
-
-            if ((priceTB.Text.Length < 0 && priceTB.Text.Length > 50))
+            if (nameTB.Text.Length == 0  || nameTB.Text.Length > 50 || 
+               vintageTB.Text.Length == 0 || vintageTB.Text.Length > 50 ||
+               grapesTB.Text.Length > 50 || sulfitesTB.Text.Length > 50 ||
+               alcoholTB.Text.Length > 50 || sugarTB.Text.Length > 50 ||
+               extractTB.Text.Length > 50 || bdateTB.Text.Length > 50 ||
+               priceTB.Text.Length == 0 || priceTB.Text.Length > 50)
             {
                 valid = false;
             }
@@ -195,8 +169,15 @@ namespace _1075UI.Sub_forms.Sub_sub
                 valid = false;
             }
 
+            DateTime dt;
+            if (!DateTime.TryParseExact(bdateTB.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
+            {
+                valid = false;
+            }
+           
             return valid;
         }
+
         private void ResetForm()
         {
             nameTB.Text = "";
@@ -206,7 +187,8 @@ namespace _1075UI.Sub_forms.Sub_sub
             alcoholTB.Text = "";
             sugarTB.Text = "";
             extractTB.Text = "";
-            bdateTB.Text = "";
+            bdateTB.Text = "yyyy-MM-dd";
+            bdateTB.ForeColor = Color.Bisque;
             priceTB.Text = "";
             instockTB.Text = "";
 
@@ -217,6 +199,15 @@ namespace _1075UI.Sub_forms.Sub_sub
         private void CreateWineForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void bdateTB_Enter(object sender, EventArgs e)
+        {
+            if (bdateTB.Text == "yyyy-MM-dd")
+            {
+                bdateTB.ForeColor = Color.BurlyWood;
+                bdateTB.Text = "";
+            }
         }
     }
 }

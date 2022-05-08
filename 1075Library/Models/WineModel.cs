@@ -43,5 +43,23 @@ namespace _1075Library.Models
             bor_raktar = instock;
             Image = new Bitmap(fullpicturepath);
         }
+
+        public WineModel(int id, string nameTB, string vintageTB, string grapesTB, string sulfitesTB,
+                         string alcoholTB, string sugarTB, string extractTB, string bdateTB, string price,
+                         int instock)
+        {
+            bor_id = id;
+            bor_nev = nameTB;
+            bor_evjarat = vintageTB;
+            bor_szolo = grapesTB;
+            bor_ken = sulfitesTB;
+            bor_alkohol = alcoholTB;
+            bor_cukor = sugarTB;
+            bor_extrakt = extractTB;
+            bor_pdatum = bdateTB;
+            bor_ar = price;
+            bor_raktar = instock;
+            Image = null;
+        }
     }
 }
