@@ -55,7 +55,6 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.browseButton = new System.Windows.Forms.Button();
             this.dialog = new System.Windows.Forms.OpenFileDialog();
             this.selectedPictureLabel = new System.Windows.Forms.Label();
-            this.winePictureBox = new System.Windows.Forms.PictureBox();
             this.euroSymbol = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.winePictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.winePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +87,6 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.nameTB.Size = new System.Drawing.Size(220, 24);
             this.nameTB.TabIndex = 0;
             this.nameTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nameTB.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             // 
             // nameLabel
             // 
@@ -100,6 +99,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.nameLabel.TabIndex = 8;
             this.nameLabel.Text = "Name*:";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nameLabel.Click += new System.EventHandler(this.nameLabel_Click);
             // 
             // vintageLabel
             // 
@@ -108,10 +108,11 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.vintageLabel.ForeColor = System.Drawing.Color.BurlyWood;
             this.vintageLabel.Location = new System.Drawing.Point(18, 108);
             this.vintageLabel.Name = "vintageLabel";
-            this.vintageLabel.Size = new System.Drawing.Size(83, 21);
+            this.vintageLabel.Size = new System.Drawing.Size(77, 21);
             this.vintageLabel.TabIndex = 9;
-            this.vintageLabel.Text = "Vintage*:";
+            this.vintageLabel.Text = "Vintage:";
             this.vintageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vintageLabel.Click += new System.EventHandler(this.vintageLabel_Click);
             // 
             // vintageTB
             // 
@@ -123,6 +124,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.vintageTB.Size = new System.Drawing.Size(220, 24);
             this.vintageTB.TabIndex = 1;
             this.vintageTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.vintageTB.TextChanged += new System.EventHandler(this.vintageTB_TextChanged);
             // 
             // grapesLabel
             // 
@@ -134,6 +136,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.grapesLabel.Size = new System.Drawing.Size(71, 21);
             this.grapesLabel.TabIndex = 11;
             this.grapesLabel.Text = "Grapes:";
+            this.grapesLabel.Click += new System.EventHandler(this.grapesLabel_Click);
             // 
             // sulfitesLabel
             // 
@@ -145,6 +148,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.sulfitesLabel.Size = new System.Drawing.Size(66, 21);
             this.sulfitesLabel.TabIndex = 12;
             this.sulfitesLabel.Text = "Sulfites:";
+            this.sulfitesLabel.Click += new System.EventHandler(this.sulfitesLabel_Click);
             // 
             // alcoholLabel
             // 
@@ -156,6 +160,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.alcoholLabel.Size = new System.Drawing.Size(73, 21);
             this.alcoholLabel.TabIndex = 13;
             this.alcoholLabel.Text = "Alcohol:";
+            this.alcoholLabel.Click += new System.EventHandler(this.alcoholLabel_Click);
             // 
             // sugarLabel
             // 
@@ -167,6 +172,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.sugarLabel.Size = new System.Drawing.Size(59, 21);
             this.sugarLabel.TabIndex = 14;
             this.sugarLabel.Text = "Sugar:";
+            this.sugarLabel.Click += new System.EventHandler(this.sugarLabel_Click);
             // 
             // instockLabel
             // 
@@ -200,6 +206,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.extractLabel.Size = new System.Drawing.Size(71, 21);
             this.extractLabel.TabIndex = 17;
             this.extractLabel.Text = "Extract:";
+            this.extractLabel.Click += new System.EventHandler(this.extractLabel_Click);
             // 
             // bdateLabel
             // 
@@ -211,6 +218,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.bdateLabel.Size = new System.Drawing.Size(70, 21);
             this.bdateLabel.TabIndex = 18;
             this.bdateLabel.Text = "B. date:";
+            this.bdateLabel.Click += new System.EventHandler(this.bdateLabel_Click);
             // 
             // instockTB
             // 
@@ -244,6 +252,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.extractTB.Size = new System.Drawing.Size(220, 24);
             this.extractTB.TabIndex = 6;
             this.extractTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.extractTB.TextChanged += new System.EventHandler(this.extractTB_TextChanged);
             // 
             // sulfitesTB
             // 
@@ -255,6 +264,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.sulfitesTB.Size = new System.Drawing.Size(220, 24);
             this.sulfitesTB.TabIndex = 3;
             this.sulfitesTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.sulfitesTB.TextChanged += new System.EventHandler(this.sulfitesTB_TextChanged);
             // 
             // alcoholTB
             // 
@@ -266,6 +276,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.alcoholTB.Size = new System.Drawing.Size(220, 24);
             this.alcoholTB.TabIndex = 4;
             this.alcoholTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.alcoholTB.TextChanged += new System.EventHandler(this.alcoholTB_TextChanged);
             // 
             // bdateTB
             // 
@@ -278,6 +289,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.bdateTB.TabIndex = 7;
             this.bdateTB.Text = "yyyy-MM-dd";
             this.bdateTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.bdateTB.TextChanged += new System.EventHandler(this.bdateTB_TextChanged);
             this.bdateTB.Enter += new System.EventHandler(this.bdateTB_Enter);
             // 
             // sugarTB
@@ -290,6 +302,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.sugarTB.Size = new System.Drawing.Size(220, 24);
             this.sugarTB.TabIndex = 5;
             this.sugarTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.sugarTB.TextChanged += new System.EventHandler(this.sugarTB_TextChanged);
             // 
             // grapesTB
             // 
@@ -301,6 +314,7 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.grapesTB.Size = new System.Drawing.Size(220, 24);
             this.grapesTB.TabIndex = 2;
             this.grapesTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.grapesTB.TextChanged += new System.EventHandler(this.grapesTB_TextChanged);
             // 
             // selectPictureLabel
             // 
@@ -360,16 +374,6 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.selectedPictureLabel.Text = "<picture>";
             this.selectedPictureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.selectedPictureLabel.Visible = false;
-            // 
-            // winePictureBox
-            // 
-            this.winePictureBox.Image = global::_1075UI.Properties.Resources.placeholderwine;
-            this.winePictureBox.Location = new System.Drawing.Point(433, 78);
-            this.winePictureBox.Name = "winePictureBox";
-            this.winePictureBox.Size = new System.Drawing.Size(138, 329);
-            this.winePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.winePictureBox.TabIndex = 31;
-            this.winePictureBox.TabStop = false;
             // 
             // euroSymbol
             // 
@@ -447,6 +451,16 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.label6.Size = new System.Drawing.Size(0, 19);
             this.label6.TabIndex = 38;
             // 
+            // winePictureBox
+            // 
+            this.winePictureBox.Image = global::_1075UI.Properties.Resources.placeholderwine;
+            this.winePictureBox.Location = new System.Drawing.Point(433, 78);
+            this.winePictureBox.Name = "winePictureBox";
+            this.winePictureBox.Size = new System.Drawing.Size(138, 329);
+            this.winePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.winePictureBox.TabIndex = 31;
+            this.winePictureBox.TabStop = false;
+            // 
             // CreateWineForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,7 +504,6 @@ namespace _1075UI.Sub_forms.Sub_sub
             this.Name = "CreateWineForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateWineForm_FormClosed);
-            this.Load += new System.EventHandler(this.InnerForm10751_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CreateWineForm_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.winePictureBox)).EndInit();
             this.ResumeLayout(false);

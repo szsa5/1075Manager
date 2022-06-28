@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 using _1075Library.Models;
 using System.IO;
@@ -43,7 +39,6 @@ namespace _1075Library
                 }
             }
         }
-
         public static bool CheckValidLogin(string username, string password)
         {
             using (MySqlConnection conn = new MySqlConnection(connString))
@@ -85,7 +80,6 @@ namespace _1075Library
                 cmd.ExecuteNonQuery();
             }
         }
-
         public static List<WineModel> GetWines()
         {
             List<WineModel> wines = new List<WineModel>();
@@ -110,7 +104,7 @@ namespace _1075Library
                     //2. bor_nev
                     wine.bor_nev = row["bor_nev"].ToString();
                     //3. bor_evjarat
-                    wine.bor_nev = row["bor_nev"].ToString();
+                    wine.bor_evjarat = row["bor_evjarat"].ToString();
                     //4. bor_szolo
                     wine.bor_szolo = row["bor_szolo"].ToString();
                     //5. bor_ken
@@ -150,6 +144,60 @@ namespace _1075Library
             return wines;
         }
 
+        public static WineModel GetWine(int bor_id)
+        {
+            WineModel wine = new WineModel(); 
+            DataTable dt = new DataTable();
+
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("GetWine", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@p_bor_id", bor_id);
+                cmd.Parameters["@p_bor_id"].Direction = ParameterDirection.Input;
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+
+                    //1. bor_id
+                    wine.bor_id = bor_id;
+                    //2. bor_nev
+                    wine.bor_nev = row["bor_nev"].ToString().Trim();
+                    //3. bor_evjarat
+                    wine.bor_evjarat = row["bor_evjarat"].ToString().Trim();
+                    //4. bor_szolo
+                    wine.bor_szolo = row["bor_szolo"].ToString().Trim();
+                    //5. bor_ken*
+                    wine.bor_ken = row["bor_ken"].ToString().Trim();
+                    //6. bor_alkohol*
+                    wine.bor_alkohol = row["bor_alkohol"].ToString().Trim();
+                    //7. bor_cukor*
+                    wine.bor_cukor = row["bor_cukor"].ToString().Trim();
+                    //8. bor_extrakt*
+                    wine.bor_extrakt = row["bor_extrakt"].ToString().Trim();
+                    //9. bor_pdatum
+                    DateTime pdatum = (DateTime)row["bor_pdatum"];
+                    wine.bor_pdatum = pdatum.ToString("yyyy-MM-dd").Trim();
+
+                    //10. bor_ar*
+                    wine.bor_ar = row["bor_ar"].ToString().Trim();
+                    //11. bor_raktar
+                    wine.bor_raktar = Convert.ToInt32(row["bor_raktar"]);
+                }
+                else
+                {
+                    return wine;
+                }
+            }
+
+            return wine;
+        }
         public static int CreateWine(string bor_nev, string bor_evjarat, string bor_szolo, string bor_ken, string bor_alkohol, string bor_cukor, 
             string bor_extrakt, string bor_pdatum, string bor_ar, int bor_raktar, string in_picturepath)
         {
@@ -207,5 +255,54 @@ namespace _1075Library
             return id;
             //continue
         }
+
+        public static void EditWine(int bor_id,string bor_nev, string bor_evjarat, string bor_szolo, string bor_ken, string bor_alkohol, string bor_cukor,
+            string bor_extrakt, string bor_pdatum, string bor_ar, int bor_raktar)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("EditWine", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@p_bor_id", bor_id);
+                cmd.Parameters["@p_bor_id"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_nev", bor_nev);
+                cmd.Parameters["@p_bor_nev"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_evjarat", bor_evjarat);
+                cmd.Parameters["@p_bor_evjarat"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_szolo", bor_szolo);
+                cmd.Parameters["@p_bor_szolo"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_ken", bor_ken);
+                cmd.Parameters["@p_bor_ken"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_alkohol", bor_alkohol);
+                cmd.Parameters["@p_bor_alkohol"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_cukor", bor_cukor);
+                cmd.Parameters["@p_bor_cukor"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_extrakt", bor_extrakt);
+                cmd.Parameters["@p_bor_extrakt"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_pdatum", bor_pdatum);
+                cmd.Parameters["@p_bor_pdatum"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_ar", bor_ar);
+                cmd.Parameters["@p_bor_ar"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@p_bor_raktar", bor_raktar);
+                cmd.Parameters["@p_bor_raktar"].Direction = ParameterDirection.Input;
+
+                cmd.ExecuteNonQuery();
+            }
+
+            return;
+        }
+
     }
 }

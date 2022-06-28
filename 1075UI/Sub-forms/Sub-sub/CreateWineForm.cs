@@ -37,16 +37,6 @@ namespace _1075UI.Sub_forms.Sub_sub
         }
 
         //\FOR MOVING THE BORDERLESS WINDOW
-        private void usernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InnerForm10751_Load(object sender, EventArgs e)
-        {
-
-        }
-
         
         private void selectPictureButton_Click(object sender, EventArgs e)
         {
@@ -122,19 +112,18 @@ namespace _1075UI.Sub_forms.Sub_sub
                         //call constructor with id from db
                         if (image_isselected)
                         {
-                            WineModel newWine = new WineModel(id, nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text + "mg/l", alcoholTB.Text + "%", sugarTB.Text + "g/l", extractTB.Text + "g/l", bdateTB.Text, priceTB.Text + "€", instock, dialog.FileName);
+                            WineModel newWine = new WineModel(id, nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text, alcoholTB.Text, sugarTB.Text, extractTB.Text, bdateTB.Text, priceTB.Text, instock, dialog.FileName);
                         }
                         else
                         {
-                            WineModel newWine = new WineModel(id, nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text + "mg/l", alcoholTB.Text + "%", sugarTB.Text + "g/l", extractTB.Text + "g/l", bdateTB.Text, priceTB.Text + "€", instock);
+                            WineModel newWine = new WineModel(id, nameTB.Text, vintageTB.Text, grapesTB.Text, sulfitesTB.Text, alcoholTB.Text, sugarTB.Text, extractTB.Text, bdateTB.Text, priceTB.Text, instock);
                         }
                         
                         MessageBox.Show("Wine added succesfully.");
                         ///
                         ResetForm();
                         break;
-                    case DialogResult.No:
-                        break;
+                    
                 }
             }
             else
@@ -147,12 +136,12 @@ namespace _1075UI.Sub_forms.Sub_sub
             bool valid = true;
             int parser;
 
-            if (nameTB.Text.Length == 0  || nameTB.Text.Length > 50 || 
-               vintageTB.Text.Length == 0 || vintageTB.Text.Length > 50 ||
-               grapesTB.Text.Length > 50 || sulfitesTB.Text.Length > 50 ||
-               alcoholTB.Text.Length > 50 || sugarTB.Text.Length > 50 ||
-               extractTB.Text.Length > 50 || bdateTB.Text.Length > 50 ||
-               priceTB.Text.Length == 0 || priceTB.Text.Length > 50)
+            if (nameTB.Text.Length == 0  || nameTB.Text.Length > 50  || 
+               vintageTB.Text.Length > 50 || grapesTB.Text.Length > 50 || 
+               sulfitesTB.Text.Length > 50 || alcoholTB.Text.Length > 50 || 
+               sugarTB.Text.Length > 50 || extractTB.Text.Length > 50 || 
+               bdateTB.Text.Length > 50 ||priceTB.Text.Length == 0 || 
+               priceTB.Text.Length > 50)
             {
                 valid = false;
             }
@@ -208,6 +197,81 @@ namespace _1075UI.Sub_forms.Sub_sub
                 bdateTB.ForeColor = Color.BurlyWood;
                 bdateTB.Text = "";
             }
+        }
+
+        private void nameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vintageLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vintageTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grapesLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grapesTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sulfitesLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sulfitesTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alcoholLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alcoholTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sugarLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sugarTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void extractTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void extractLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bdateLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bdateTB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

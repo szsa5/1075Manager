@@ -83,6 +83,12 @@
     <Compile Include="Sub-forms\Sub-sub\InnerForm10751.Designer.cs">
       <DependentUpon>CreateWineForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sub-forms\Sub-sub\EditWineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sub-forms\Sub-sub\EditWineForm.Designer.cs">
+      <DependentUpon>EditWineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sub-forms\WinesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sub-forms\Sub-sub\CreateWineForm.resx">
       <DependentUpon>CreateWineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub-forms\Sub-sub\EditWineForm.resx">
+      <DependentUpon>EditWineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sub-forms\WinesForm.resx">
       <DependentUpon>WinesForm.cs</DependentUpon>

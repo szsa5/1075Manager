@@ -47,10 +47,19 @@ namespace _1075UI
         //    return wines;
         //}
 
-        private void LoadWines(List<WineModel> wines)
+        public void Initialize()
+        {
+            this.Controls.Clear();
+            this.InitializeComponent();
+            List<WineModel> wines = SqlTools.GetWines();
+            LoadWines(wines);
+        }
+
+        public void LoadWines(List<WineModel> wines)
         {
             int counter = 0;
             int X = 20, Y = 0;
+            string winename;
 
             foreach (WineModel wine in wines)
             {
@@ -61,8 +70,11 @@ namespace _1075UI
                     counter = 0;
                 }
 
-                WineControl wineControl = new WineControl() { Location = new Point(X, Y) };
-                wineControl.SetWineName(wine.bor_nev);
+                WineControl wineControl = new WineControl(wine, this) { Location = new Point(X, Y) };
+
+                winename = wine.bor_nev+" "+wine.bor_evjarat;
+                wineControl.SetWineName(winename);
+
                 if(wine.Image != null)
                 {
                     wineControl.SetWineImage(wine.Image);
@@ -83,14 +95,12 @@ namespace _1075UI
         }
         private void CreateWineFormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Controls.Clear();
-            this.InitializeComponent();
-            List<WineModel> wines = SqlTools.GetWines();
-            LoadWines(wines);
+            Initialize();
         }
         private void WinesForm_Load(object sender, EventArgs e)
-            {
+        {
 
-            }
         }
+
+    }
 }

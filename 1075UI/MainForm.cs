@@ -75,6 +75,9 @@ namespace _1075UI
             DashboardForm dashboardForm = new DashboardForm() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             dashboardForm.FormBorderStyle = FormBorderStyle.None;
             this.formLoaderPanel.Controls.Add(dashboardForm);
+
+            addWineButton.Visible = false;
+
             dashboardForm.Show();
         }
         private void winesButton_Click(object sender, EventArgs e)
@@ -105,6 +108,9 @@ namespace _1075UI
             InventoryForm inventoryForm = new InventoryForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             inventoryForm.FormBorderStyle = FormBorderStyle.None;
             this.formLoaderPanel.Controls.Add(inventoryForm);
+
+            addWineButton.Visible = false;
+
             inventoryForm.Show();
         }
 
@@ -119,6 +125,9 @@ namespace _1075UI
             ShipmentsForm shipmentsForm = new ShipmentsForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             shipmentsForm.FormBorderStyle = FormBorderStyle.None;
             this.formLoaderPanel.Controls.Add(shipmentsForm);
+
+            addWineButton.Visible = false;
+
             shipmentsForm.Show();
         }
         private void settingsButton_Click(object sender, EventArgs e)
@@ -132,6 +141,9 @@ namespace _1075UI
             SettingsForm settingsForm = new SettingsForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             settingsForm.FormBorderStyle = FormBorderStyle.None;
             this.formLoaderPanel.Controls.Add(settingsForm);
+
+            addWineButton.Visible = false;
+
             settingsForm.Show();
         }
 

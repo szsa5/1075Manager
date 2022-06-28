@@ -63,3 +63,4 @@ C:\Users\szsas\Source\Repos\1075Manager\1075UI\obj\Debug\1075UI.csproj.Suggested
 C:\Users\szsas\Source\Repos\1075Manager\1075UI\obj\Debug\1075UI.exe.config
 C:\Users\szsas\Source\Repos\szsa5\1075Manager\1075UI\obj\Debug\_1075UI.Sub_forms.Sub_sub.CreateWineForm.resources
 C:\Users\szsas\source\repos\1075Manager\1075UI\obj\Debug\_1075UI.Sub_forms.Sub_sub.CreateWineForm.resources
+C:\Users\szsas\Source\Repos\szsa5\1075Manager\1075UI\obj\Debug\_1075UI.Sub_forms.Sub_sub.EditWineForm.resources

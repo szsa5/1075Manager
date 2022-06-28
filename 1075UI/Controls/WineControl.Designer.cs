@@ -36,6 +36,7 @@ namespace _1075UI
             // 
             // winePictureBox
             // 
+            this.winePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.winePictureBox.Image = global::_1075UI.Properties.Resources.placeholderwine;
             this.winePictureBox.Location = new System.Drawing.Point(54, 3);
             this.winePictureBox.Name = "winePictureBox";
@@ -43,9 +44,11 @@ namespace _1075UI
             this.winePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.winePictureBox.TabIndex = 0;
             this.winePictureBox.TabStop = false;
+            this.winePictureBox.Click += new System.EventHandler(this.winePictureBox_Click);
             // 
             // wineNameLabel
             // 
+            this.wineNameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.wineNameLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.wineNameLabel.ForeColor = System.Drawing.Color.Black;
             this.wineNameLabel.Location = new System.Drawing.Point(0, 226);
@@ -54,6 +57,7 @@ namespace _1075UI
             this.wineNameLabel.TabIndex = 1;
             this.wineNameLabel.Text = "WineName";
             this.wineNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.wineNameLabel.Click += new System.EventHandler(this.wineNameLabel_Click);
             // 
             // WineControl
             // 
